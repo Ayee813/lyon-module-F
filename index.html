@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lyon Tourist Page</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="mainfest" href="json/manifest.json">
+    <script src="js/Script.js"></script>
+    <script src="js/sw.js"></script>
+
+</head>
+
+<body>
+    <nav>
+        <div class="nav-cover">
+            <h2 class="logo">WELCOM LYON</h2>
+            <ul>
+                <li><a href="#">link</a></li>
+                <li><a href="#">link</a></li>
+                <li><a href="#">link</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="Call-to-Action">
+        <picture>
+            <source media="(max-width:760px)" srcset="asset/images/cover-low-res.jpg">
+            <img src="asset/images/cover.jpg" alt="a block in lyon city, there is a motobike and some people.">
+        </picture>
+        <button>Call to Action</button>
+    </div>
+    <div class="attractions">
+        <h1>Map Attractions</h1>
+        <div class="map-cover">
+            <div class="map">
+                <picture>
+                    <source media="(max-width:760px)" srcset="asset/images/lyon-map-low-res.jpg">
+                    <img src="asset/images/lyon-map.jpg" alt="lyon city google map" />
+                </picture>
+            </div>
+            <div class="card-container">
+                <div class="card">
+                    <picture>
+                        <source media="(max-width:760px)" srcset="asset/images/all-attractions-low-res.jpg">
+                        <img src="asset/images/all-attractions.jpg"
+                            alt="Statue of a man on a horse in a city square with posters and a few people walking nearby under a blue sky with clouds" />
+                    </picture>
+                    <p>this is information of it</p>
+                </div>
+                <div class="card">
+                    <picture>
+                        <source media="(max-width:760px)" srcset="asset/images/attraction-b-low-res.jpg">
+                        <img src="asset/images/attraction-b.jpg"
+                            alt="a block of lyon city in night time with many people walking around it, LED light bright like day time" />
+
+                    </picture>
+                    <p>this is information of it</p>
+                </div>
+                <div class="card">
+                    <picture>
+                        <source media="(max-width:760px)" srcset="asset/images/attraction-c-low-res.jpg">
+                        <img src="asset/images/attraction-c.jpg"
+                            alt="A river in Lyon city with trees in the left, houses in the right and blue sky above" />
+                    </picture>
+                    <p>this is information of it</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="video-wrapper">
+        <video src="asset/videos/lyon.mp4" autoplay muted loop></video>
+    </div>
+    <div class="assential-info">
+        <div class="info-left">
+            <h1>Essential infomation</h1>
+            <div>
+                <p>contact: 04 72 10 30 30</p>
+                <p>Address: Mairie de Lyon, 69205 Lyon cedex 01</p>
+                <button>Read it Loud</button>
+            </div>
+        </div>
+        <div class="info-right">
+            <h1>Latest Event</h1>
+            <div class="even-cover">
+                <div>
+                    <picture>
+                        <source media="(max-width:760px)"
+                            srcset="asset/images/latest-events-images/worldskills-2024-p-low-res.png">
+                        <img src="asset/images/latest-events-images/worldskills-2024-p.jpg" alt="">
+                        <p>Lyon accueille la finale mondiale des Worldskills 2024</p>
+                    </picture>
+                </div>
+                <div>
+                    <picture>
+                        <source media="(max-width:760px)" srcset="asset/images/latest-events-images/fda-p-low-res.jpg">
+                        <img src="asset/images/latest-events-images/fda-p.jpg" alt="">
+                        <p>Forum des associations 2024</p>
+                    </picture>
+                </div>
+                <div>
+                    <picture>
+                        <source media="(max-width:760px)"
+                            srcset="asset/images/latest-events-images/journees_portes_ouvertes_entreprises_2023_p-low-res.jpg">
+                        <img src="asset/images/latest-events-images/journees_portes_ouvertes_entreprises_2023_p.jpg"
+                            alt="">
+                        <p>Forum des associations 2024</p>
+                    </picture>
+                </div>
+                <div>
+                    <picture>
+                        <source media="(max-width:760px)"
+                            srcset="asset/images/latest-events-images/lyon-kayak-p-0-low-res.jpg">
+                        <img src="asset/images/latest-events-images/lyon-kayak-p-0.jpg" alt="">
+                        <p>Forum des associations 2024</p>
+                    </picture>
+                </div>
+                <div>
+                    <picture>
+                        <source media="(max-width:760px)"
+                            srcset="asset/images/latest-events-images/semaine-bleue-2024-p-low-res.jpg">
+                        <img src="asset/images/latest-events-images/semaine-bleue-2024-p.jpg" alt="">
+                        <p>Forum des associations 2024</p>
+                    </picture>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="other-info">
+        <h1>Other infomation</h1>
+        <div class="tab-cover">
+            <div class="tab-index">
+                <button>tab 1</button><button>tab 1</button><button>tab 1</button>
+            </div>
+            <div class="line"></div>
+            <div class="tab-content">
+                <p style="margin-top: 20px; text-align: start;">this is demo for index 1 content.</p>
+            </div>
+        </div>
+    </div>
+    <div class="contact-container">
+        <h1>Contact</h1>
+        <div class="form-row">
+            <div class="form-group">
+                <label for="first-name">First name</label>
+                <input type="text" id="first-name" placeholder="enter first name...">
+            </div>
+            <div class="form-group">
+                <label for="last-name">Last name</label>
+                <input type="text" id="last-name" placeholder="Enter last name...">
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="enter email...">
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" placeholder="phone number ...">
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-menu">
+            <div class="menu-row">
+                <p>Lorem, ipsum dolor.</p>
+                <p>Lorem, ipsum dolor.</p>
+                <p>Lorem, ipsum dolor.</p>
+            </div>
+            <div class="menu-row">
+                <p>Lorem, ipsum dolor.</p>
+                <p>Lorem, ipsum dolor.</p>
+                <p>Lorem, ipsum dolor.</p>
+            </div>
+            <div class="menu-row">
+                <p>Lorem, ipsum dolor.</p>
+                <p>Lorem, ipsum dolor.</p>
+                <p>Lorem, ipsum dolor.</p>
+            </div>
+            <div class="menu-row">
+                <p>Lorem, ipsum dolor.</p>
+                <p>Lorem, ipsum dolor.</p>
+                <p>Lorem, ipsum dolor.</p>
+            </div>
+        </div>
+        <p>@2024,All Rights Reserved.</p>
+    </footer>
+</body>
+
+</html>

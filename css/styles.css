@@ -1,0 +1,333 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+nav {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+
+    & .nav-cover {
+        display: flex;
+
+        & .logo {
+            margin: 0 10rem;
+        }
+
+        & ul {
+            display: flex;
+            width: 40%;
+            gap: 0 10rem;
+            font-weight: bold;
+
+            & li {
+                list-style: none;
+
+                & a {
+                    text-decoration: none;
+                    color: rgb(39, 39, 39);
+                }
+            }
+        }
+    }
+
+
+}
+
+.Call-to-Action {
+    width: 100%;
+    height: 820px;
+    position: relative;
+    overflow: hidden;
+    margin-top: 60px;
+    & img {
+        position: absolute;
+        width: 100%;
+        object-fit: fill;
+
+    }
+
+    & button {
+        position: relative;
+        z-index: 2;
+        background-color: rgb(255, 255, 255);
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 30px 50px;
+    }
+
+
+}
+
+.attractions {
+    width: 100%;
+    height: 800px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    & h1 {
+        font-size: 5rem;
+        margin: 2rem;
+        z-index: 3;
+    }
+
+    .map-cover {
+        width: 60%;
+        height: 600px;
+        position: relative;
+
+        .map {
+            width: 100%;
+            height: 100%;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        .card-container {
+            display: flex;
+            gap: 10px;
+            position: absolute;
+            top: 0;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            margin: 3rem;
+            gap: 2rem;
+            justify-content: center;
+
+            .card {
+                width: 210px;
+                height: 210px;
+                background-color: #f1f1f1f1;
+                padding: 1rem;
+                border: 1px solid black;
+
+                img {
+                    width: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+}
+
+.video-wrapper {
+    width: 100%;
+    object-fit: cover;
+    overflow: hidden;
+    height: 900px;
+
+    & video {
+        aspect-ratio: 16/9;
+    }
+}
+
+.assential-info {
+    width: 100%;
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    & .info-left {
+        width: 500px;
+        height: 300px;
+
+        & :focus {
+            outline: 2px #007bff;
+            outline-offset: 2px;
+        }
+
+        & h1 {
+            font-size: 4rem;
+            align-items: center;
+            letter-spacing: -0.08em;
+            text-align: center;
+        }
+
+        & div {
+            display: flex;
+            flex-direction: column;
+
+            justify-content: start;
+            gap: 1rem;
+
+            & button {
+                width: 10rem;
+                height: 3rem;
+                border: none;
+                background-color: rgb(0, 0, 180);
+                color: rgb(255, 255, 255);
+                border-radius: 5px;
+                font-weight: bold;
+            }
+        }
+    }
+
+    & .info-right {
+        width: 500px;
+        height: 300px;
+
+        & h1 {
+            font-size: 4rem;
+            align-items: center;
+            letter-spacing: -0.08em;
+            text-align: center;
+        }
+
+        & .even-cover:focus {
+            outline: 2px #007bff;
+            outline-offset: 2px;
+        }
+
+        & .even-cover {
+            width: 100%;
+            display: flex;
+            height: 220px;
+            gap: 1rem;
+            border: 1px solid rgb(162, 162, 162);
+            padding: 10px 5px;
+            border-radius: 5px;
+            overflow-x: auto;
+
+            & div {
+                background-color: rgb(250, 250, 250);
+                padding: 5px;
+                min-width: 250px;
+                box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+                & img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+.other-info {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    & h1 {
+        text-align: center;
+        font-size: 5rem;
+    }
+
+    & .tab-cover {
+        width: 100%;
+        height: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        & .tab-index {
+            width: 50%;
+            display: flex;
+            justify-content: start;
+            align-items: center;
+
+            & button {
+                width: 3rem;
+                height: 2rem;
+                border: 1px solid gray;
+            }
+
+        }
+
+        & .line {
+            border: 1px solid gray;
+            width: 50%;
+            height: 0px;
+        }
+
+        & .tab-content {
+            width: 50%;
+            height: auto;
+        }
+
+    }
+
+
+}
+
+& .contact-container {
+    width: 70%;
+    height: 200px;
+    margin: 50px 0px;
+    border: 1px solid black;
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    & h1 {
+        text-align: center;
+        padding: 20px;
+        width: 15rem;
+        border: 1px solid black;
+        transform: translateY(-50%);
+        background-color: white;
+    }
+
+    & .form-row {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        height: 50px;
+        gap: 30px;
+
+        & .form-group {
+            width: 25%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0px 10px;
+            align-items: center;
+
+        }
+    }
+}
+
+footer {
+    height: 150px;
+    width: 100%;
+    background-color: #2f2f2f2f;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    & .footer-menu {
+        padding: 20px;
+        width: 100%;
+        height: 80px;
+        display: flex;
+        justify-content: space-evenly;
+        margin-bottom: 1rem;
+    }
+
+}
