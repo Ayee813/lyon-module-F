@@ -115,14 +115,12 @@ nav {
             margin: 3rem;
             gap: 2rem;
             justify-content: center;
-
             .card {
                 width: 210px;
                 height: 210px;
                 background-color: #f1f1f1f1;
-                padding: 1rem;
-                border: 1px solid black;
-
+                padding: 5px;
+                border-radius: 10px;
                 img {
                     width: 100%;
                     object-fit: cover;
