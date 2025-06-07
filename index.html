@@ -14,22 +14,21 @@
 
 <body>
     <nav>
-        <div class="nav-cover">
-            <h2 class="logo">WELCOM LYON</h2>
-            <ul>
-                <li><a href="#">link</a></li>
-                <li><a href="#">link</a></li>
-                <li><a href="#">link</a></li>
-            </ul>
-        </div>
+        <h2 class="logo">WELCOM LYON</h2>
+        <ul>
+            <li><a href="#">link</a></li>
+            <li><a href="#">link</a></li>
+            <li><a href="#">link</a></li>
+        </ul>
     </nav>
     <div class="Call-to-Action">
         <picture>
             <source media="(max-width:760px)" srcset="asset/images/cover-low-res.jpg">
             <img src="asset/images/cover.jpg" alt="a block in lyon city, there is a motobike and some people.">
         </picture>
-        <button>Call to Action</button>
+            <button class="call-btn">Call to Action</button>
     </div>
+
     <div class="attractions">
         <h1>Map Attractions</h1>
         <div class="map-cover">
@@ -41,29 +40,31 @@
             </div>
             <div class="card-container">
                 <div class="card">
-                    <picture>
+                    <picture id="overlay" onmouseover="overlayAdd(this)" onmouseout="overlayRemove(this)">
                         <source media="(max-width:760px)" srcset="asset/images/all-attractions-low-res.jpg">
                         <img src="asset/images/all-attractions.jpg"
                             alt="Statue of a man on a horse in a city square with posters and a few people walking nearby under a blue sky with clouds" />
+                        <span class="overlay"></span>
                     </picture>
-                    <p>this is information of it</p>
+                    <p>All Attractions</p>
                 </div>
                 <div class="card">
-                    <picture>
+                    <picture id="overlay" onmouseover="overlayAdd(this)" onmouseout="overlayRemove(this)">
                         <source media="(max-width:760px)" srcset="asset/images/attraction-b-low-res.jpg">
                         <img src="asset/images/attraction-b.jpg"
                             alt="a block of lyon city in night time with many people walking around it, LED light bright like day time" />
-
+                        <span class="overlay"></span>
                     </picture>
-                    <p>this is information of it</p>
+                    <p>Stree</p>
                 </div>
                 <div class="card">
-                    <picture>
+                    <picture id="overlay" onmouseover="overlayAdd(this)" onmouseout="overlayRemove(this)">
                         <source media="(max-width:760px)" srcset="asset/images/attraction-c-low-res.jpg">
                         <img src="asset/images/attraction-c.jpg"
                             alt="A river in Lyon city with trees in the left, houses in the right and blue sky above" />
+                        <span class="overlay"></span>
                     </picture>
-                    <p>this is information of it</p>
+                    <p>River</p>
                 </div>
             </div>
         </div>
@@ -74,10 +75,10 @@
     <div class="assential-info">
         <div class="info-left">
             <h1>Essential infomation</h1>
-            <div>
+            <div class="contact">
                 <p>contact: 04 72 10 30 30</p>
                 <p>Address: Mairie de Lyon, 69205 Lyon cedex 01</p>
-                <button>Read it Loud</button>
+                <button aria-label="Read contact information aloud" onclick="readText()">Read it Loud</button>
             </div>
         </div>
         <div class="info-right">
@@ -131,17 +132,18 @@
         <h1>Other infomation</h1>
         <div class="tab-cover">
             <div class="tab-index">
-                <button>tab 1</button><button>tab 1</button><button>tab 1</button>
+                <button onclick="tabLoad('tabPage/tab1', this)">tab 1</button>
+                <button onclick="tabLoad('tabPage/tab2', this)">tab 2</button>
+                <button onclick="tabLoad('tabPage/tab3', this)">tab 3</button>
             </div>
             <div class="line"></div>
-            <div class="tab-content">
-                <p style="margin-top: 20px; text-align: start;">this is demo for index 1 content.</p>
+            <div class="tab-content" id="tab">
             </div>
         </div>
     </div>
     <div class="contact-container">
         <h1>Contact</h1>
-        <div class="form-row">
+        <div class="form-row form-top">
             <div class="form-group">
                 <label for="first-name">First name</label>
                 <input type="text" id="first-name" placeholder="enter first name...">
@@ -166,24 +168,24 @@
     <footer>
         <div class="footer-menu">
             <div class="menu-row">
-                <p>Lorem, ipsum dolor.</p>
-                <p>Lorem, ipsum dolor.</p>
-                <p>Lorem, ipsum dolor.</p>
+                <p>About us</p>
+                <p>Getting Here</p>
+                <p>FAQs</p>
             </div>
             <div class="menu-row">
-                <p>Lorem, ipsum dolor.</p>
-                <p>Lorem, ipsum dolor.</p>
-                <p>Lorem, ipsum dolor.</p>
+                <p>Places to Stay</p>
+                <p>Thing to Do</p>
+                <p>Event Calendar</p>
             </div>
             <div class="menu-row">
-                <p>Lorem, ipsum dolor.</p>
-                <p>Lorem, ipsum dolor.</p>
-                <p>Lorem, ipsum dolor.</p>
+                <p>Restaurants</p>
+                <p>Nightlife</p>
+                <p>Shopping</p>
             </div>
             <div class="menu-row">
-                <p>Lorem, ipsum dolor.</p>
-                <p>Lorem, ipsum dolor.</p>
-                <p>Lorem, ipsum dolor.</p>
+                <p>Plan Your Trip</p>
+                <p>Contanct Us</p>
+                <p>Newsletter</p>
             </div>
         </div>
         <p>@2024,All Rights Reserved.</p>

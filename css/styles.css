@@ -9,6 +9,7 @@ body {
     display: flex;
     align-items: center;
     flex-direction: column;
+    background-color: #F2F2F2;
 }
 
 nav {
@@ -23,123 +24,191 @@ nav {
     top: 0;
     z-index: 1000;
 
-    & .nav-cover {
+
+    & .logo {
+        margin: 0 clamp(1.5rem, 7vw, 10rem);
+    }
+
+    & ul {
         display: flex;
+        gap: 0 clamp(1rem, 7vw, 10rem);
+        font-weight: bold;
 
-        & .logo {
-            margin: 0 10rem;
-        }
+        & li {
+            list-style: none;
 
-        & ul {
-            display: flex;
-            width: 40%;
-            gap: 0 10rem;
-            font-weight: bold;
-
-            & li {
-                list-style: none;
-
-                & a {
-                    text-decoration: none;
-                    color: rgb(39, 39, 39);
-                }
+            & a {
+                text-decoration: none;
+                color: rgb(39, 39, 39);
             }
         }
+
     }
 
 
 }
+
+/* call to action  */
 
 .Call-to-Action {
     width: 100%;
-    height: 820px;
+    height: 940px;
     position: relative;
     overflow: hidden;
     margin-top: 60px;
-    & img {
-        position: absolute;
-        width: 100%;
-        object-fit: fill;
+}
 
-    }
+.Call-to-Action img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
 
-    & button {
-        position: relative;
-        z-index: 2;
-        background-color: rgb(255, 255, 255);
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        padding: 30px 50px;
-    }
-
+.call-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    z-index: 2;
+    padding: 30px 50px;
 
 }
 
+
+
+/* attractions css */
 .attractions {
     width: 100%;
-    height: 800px;
+    height: auto;
     display: flex;
     align-items: center;
     flex-direction: column;
-
-    & h1 {
-        font-size: 5rem;
-        margin: 2rem;
-        z-index: 3;
-    }
-
-    .map-cover {
-        width: 60%;
-        height: 600px;
-        position: relative;
-
-        .map {
-            width: 100%;
-            height: 100%;
-
-            img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-            }
-        }
-
-        .card-container {
-            display: flex;
-            gap: 10px;
-            position: absolute;
-            top: 0;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            margin: 3rem;
-            gap: 2rem;
-            justify-content: center;
-            .card {
-                width: 210px;
-                height: 210px;
-                background-color: #f1f1f1f1;
-                padding: 5px;
-                border-radius: 10px;
-                img {
-                    width: 100%;
-                    object-fit: cover;
-                }
-            }
-        }
-    }
+    padding: 2rem 1rem;
 }
 
+.attractions h1 {
+    font-size: clamp(2rem, 5vw, 4rem);
+    /* Responsive title */
+    margin: 2rem;
+    z-index: 3;
+    text-align: center;
+}
+
+.map-cover {
+    width: 90%;
+    max-width: 1200px;
+    height: auto;
+    position: relative;
+}
+
+.map {
+    width: 100%;
+    height: 600px;
+}
+
+.map img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+
+
+.card-container {
+    position: absolute;
+    top: 0;
+    margin: 3rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    justify-content: center;
+}
+
+.card {
+    width: clamp(160px, 25vw, 210px);
+    height: auto;
+    background-color: #f1f1f1f1;
+    padding: 5px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform, box-shadow, 0.3s ease-in-out;
+}
+
+.card:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+}
+
+#overlay {
+    position: relative;
+    width: 100%;
+    display: block;
+    overflow: hidden;
+}
+
+.overlay {
+    position: absolute;
+    top: -20%;
+    height: 140%;
+    width: 2rem;
+    background: rgba(255, 255, 255, 0.8);
+
+    transform-origin: top left;
+    transform: translateX(-240px) rotate(15deg);
+    pointer-events: none;
+    transition: transform 0.5s ease;
+}
+
+.overlay-hover {
+    transform: translateX(60px) rotate(15deg);
+}
+
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.card p {
+    width: 100%;
+    text-align: start;
+    margin: 10px;
+    font-size: 1rem;
+    color: #333;
+}
+
+/* video section */
 .video-wrapper {
     width: 100%;
-    object-fit: cover;
+    position: relative;
     overflow: hidden;
-    height: 900px;
-
-    & video {
-        aspect-ratio: 16/9;
-    }
+    padding-top: 56.25%;
 }
+
+.video-wrapper video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* assential-info section  */
 
 .assential-info {
     width: 100%;
@@ -158,13 +227,13 @@ nav {
         }
 
         & h1 {
-            font-size: 4rem;
+            font-size: clamp(2rem, 5vw, 4rem);
             align-items: center;
             letter-spacing: -0.08em;
             text-align: center;
         }
 
-        & div {
+        & .contact {
             display: flex;
             flex-direction: column;
 
@@ -180,15 +249,22 @@ nav {
                 border-radius: 5px;
                 font-weight: bold;
             }
+            button:hover{
+                cursor: pointer;
+            }
         }
     }
 
     & .info-right {
         width: 500px;
         height: 300px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
 
         & h1 {
-            font-size: 4rem;
+            font-size: clamp(2rem, 5vw, 4rem);
             align-items: center;
             letter-spacing: -0.08em;
             text-align: center;
@@ -200,7 +276,7 @@ nav {
         }
 
         & .even-cover {
-            width: 100%;
+            width: clamp(50%, 75vw, 100%);
             display: flex;
             height: 220px;
             gap: 1rem;
@@ -232,49 +308,78 @@ nav {
 
     & h1 {
         text-align: center;
-        font-size: 5rem;
+        font-size: clamp(2rem, 5vw, 4rem);
     }
 
-    & .tab-cover {
-        width: 100%;
-        height: 200px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-
-        & .tab-index {
-            width: 50%;
-            display: flex;
-            justify-content: start;
-            align-items: center;
-
-            & button {
-                width: 3rem;
-                height: 2rem;
-                border: 1px solid gray;
-            }
-
-        }
-
-        & .line {
-            border: 1px solid gray;
-            width: 50%;
-            height: 0px;
-        }
-
-        & .tab-content {
-            width: 50%;
-            height: auto;
-        }
-
-    }
 
 
 }
 
+.tab-cover {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.tab-index {
+    width: 50%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.tab-index button {
+    position: relative;
+    width: 4rem;
+    height: 2rem;
+    background-color: white;
+    border: none;
+    background-color: rgb(219, 219, 219);
+    transition: background-color .3s ease-in-out;
+}
+
+.tab-index button::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: rgb(0, 106, 255);
+    transition: width 0.3s ease;
+}
+.tab-index button:hover{
+    cursor: pointer;
+}
+
+.tab-index button.active::after {
+    width: 100%;
+}
+
+.tab-index button.active {
+    background-color: white;
+}
+
+.line {
+    border: 1px solid gray;
+    width: 50%;
+    height: 0px;
+}
+
+.tab-content {
+    width: 50%;
+    margin: 20px;
+    height: auto;
+}
+
+
+
+
 & .contact-container {
-    width: 70%;
+    width: clamp(90%, 50vw, 70%);
     height: 200px;
     margin: 50px 0px;
     border: 1px solid black;
@@ -285,6 +390,7 @@ nav {
 
     & h1 {
         text-align: center;
+        font-size: clamp(1rem, 3vw, 2rem);
         padding: 20px;
         width: 15rem;
         border: 1px solid black;
@@ -310,6 +416,11 @@ nav {
     }
 }
 
+input {
+    width: clamp(100px, 20vw, 300px);
+    padding: 8px;
+}
+
 footer {
     height: 150px;
     width: 100%;
@@ -328,4 +439,56 @@ footer {
         margin-bottom: 1rem;
     }
 
+}
+
+button:focus-visible {
+    border: 2px solid gray;
+}
+
+@media (max-width:760px) {
+    .assential-info {
+        display: grid;
+        grid-template-rows: repeat(2, 1fr);
+        height: 800px;
+    }
+
+    .info-left {
+        margin-top: 150px;
+    }
+
+    .contact {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .form-row {
+        flex-direction: column;
+        align-items: start;
+    }
+
+    .form-top {
+        margin-top: 40px;
+    }
+
+    .form-group {
+        margin: 20px;
+        gap: 10px;
+    }
+
+    .contact-container {
+        height: 300px;
+
+    }
+
+    input {
+        width: 50vw;
+    }
+
+    .footer {
+        height: 200px;
+    }
+
+    p {
+        font-size: .8rem;
+    }
 }
