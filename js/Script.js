@@ -23,8 +23,36 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 });
+//for offline
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/js/sw.js')
+        .then(reg => console.log('SW registered', reg))
+        .catch(err => console.log('SW registration failed', err));
+    });
+  }
 
 //for loading tab index
+
+function setupKeyboardNav() {
+    const buttons = document.querySelectorAll('.tab-index button');
+    let currentIndex = 0;
+    
+    document.querySelector('.tab-index').addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') {
+            e.preventDefault();
+            currentIndex = currentIndex > 0 ? currentIndex - 1 : buttons.length - 1;
+            buttons[currentIndex].click();
+            buttons[currentIndex].focus();
+        } else if (e.key === 'ArrowRight') {
+            e.preventDefault();
+            currentIndex = currentIndex < buttons.length - 1 ? currentIndex + 1 : 0;
+            buttons[currentIndex].click();
+            buttons[currentIndex].focus();
+        }
+    });
+}
+
 function tabLoad(tab, button) {
     fetch(tab + '.html')
         .then(response => response.text())
@@ -46,6 +74,7 @@ function tabLoad(tab, button) {
 window.onload = function () {
     const firstButton = document.querySelector('.tab-index button');
     tabLoad('tabPage/tab1', firstButton);
+    setupKeyboardNav();
 };
 
 function readText() {
@@ -66,10 +95,38 @@ function overlayRemove(el) {
     overlay.classList.remove('overlay-hover');
 }
 
-// function btnEffcet(){
-//     const button = document.querySelector('.call-btn');
 
-//     button.addEventListener("mousemove", function(e){
-//         const x = e.clientX
-//     })
-// }
+//call btn effect
+const button = document.querySelector(".call-btn");
+
+const readout = document.querySelector("p");
+
+document.addEventListener('DOMContentLoaded', function() {
+    const button = document.querySelector(".call-btn");
+    
+    button.addEventListener("mousemove", (e) => {
+        const rect = button.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        button.style.setProperty("--x", x + "px");
+        button.style.setProperty("--y", y + "px");
+    });
+});
+
+//for offline access
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('./sw.js')
+        .then((registration) => {
+            console.log('SW registered successfully');
+        })
+        .catch((error) => {
+            console.log('SW registration failed');
+        });
+}
+
+
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('sw.js')
+      .then(() => console.log("Service Worker Registered"))
+      .catch((err) => console.error("SW Registration Failed:", err));
+  }

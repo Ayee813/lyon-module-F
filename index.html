@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lyon Tourist Page</title>
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="mainfest" href="json/manifest.json">
+    <link rel="manifest" href="/json/manifest.json">
+    <meta name="theme-color" content="#317EFB">
     <script src="js/Script.js"></script>
     <script src="js/sw.js"></script>
 
@@ -21,12 +22,12 @@
             <li><a href="#">link</a></li>
         </ul>
     </nav>
-    <div class="Call-to-Action">
+    <div class="call-to-action">
         <picture>
             <source media="(max-width:760px)" srcset="asset/images/cover-low-res.jpg">
             <img src="asset/images/cover.jpg" alt="a block in lyon city, there is a motobike and some people.">
         </picture>
-            <button class="call-btn">Call to Action</button>
+        <button class="call-btn">Call to Action</button>
     </div>
 
     <div class="attractions">
@@ -39,16 +40,15 @@
                 </picture>
             </div>
             <div class="card-container">
-                <div class="card">
+                <div class="card" tabindex="0">
                     <picture id="overlay" onmouseover="overlayAdd(this)" onmouseout="overlayRemove(this)">
                         <source media="(max-width:760px)" srcset="asset/images/all-attractions-low-res.jpg">
-                        <img src="asset/images/all-attractions.jpg"
-                            alt="Statue of a man on a horse in a city square with posters and a few people walking nearby under a blue sky with clouds" />
+                        <img src="asset/images/all-attractions.jpg" alt="..." />
                         <span class="overlay"></span>
                     </picture>
                     <p>All Attractions</p>
                 </div>
-                <div class="card">
+                <div class="card" tabindex="0">
                     <picture id="overlay" onmouseover="overlayAdd(this)" onmouseout="overlayRemove(this)">
                         <source media="(max-width:760px)" srcset="asset/images/attraction-b-low-res.jpg">
                         <img src="asset/images/attraction-b.jpg"
@@ -57,7 +57,7 @@
                     </picture>
                     <p>Stree</p>
                 </div>
-                <div class="card">
+                <div class="card" tabindex="0">
                     <picture id="overlay" onmouseover="overlayAdd(this)" onmouseout="overlayRemove(this)">
                         <source media="(max-width:760px)" srcset="asset/images/attraction-c-low-res.jpg">
                         <img src="asset/images/attraction-c.jpg"
@@ -131,13 +131,13 @@
     <div class="other-info">
         <h1>Other infomation</h1>
         <div class="tab-cover">
-            <div class="tab-index">
-                <button onclick="tabLoad('tabPage/tab1', this)">tab 1</button>
-                <button onclick="tabLoad('tabPage/tab2', this)">tab 2</button>
-                <button onclick="tabLoad('tabPage/tab3', this)">tab 3</button>
+            <div class="tab-index" role="tablist">
+                <button role="tab" aria-selected="true" onclick="tabLoad('tabPage/tab1', this)">tab 1</button>
+                <button role="tab" aria-selected="false" onclick="tabLoad('tabPage/tab2', this)">tab 2</button>
+                <button role="tab" aria-selected="false" onclick="tabLoad('tabPage/tab3', this)">tab 3</button>
             </div>
             <div class="line"></div>
-            <div class="tab-content" id="tab">
+            <div class="tab-content" id="tab" role="tabpanel">
             </div>
         </div>
     </div>
@@ -146,7 +146,7 @@
         <div class="form-row form-top">
             <div class="form-group">
                 <label for="first-name">First name</label>
-                <input type="text" id="first-name" placeholder="enter first name...">
+                <input type="text" id="first-name" placeholder="Enter first name...">
             </div>
             <div class="form-group">
                 <label for="last-name">Last name</label>
@@ -157,11 +157,11 @@
         <div class="form-row">
             <div class="form-group">
                 <label for="email">Email</label>
-                <input type="email" id="email" placeholder="enter email...">
+                <input type="email" id="email" placeholder="Enter email...">
             </div>
             <div class="form-group">
                 <label for="phone">Phone</label>
-                <input type="tel" id="phone" placeholder="phone number ...">
+                <input type="tel" id="phone" placeholder="Phone number ...">
             </div>
         </div>
     </div>
